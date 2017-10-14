@@ -12,6 +12,7 @@
           <element id="library" level="project" name="Maven: org.slf4j:slf4j-api:1.7.21" />
           <element id="library" level="project" name="Maven: commons-lang:commons-lang:2.6" />
           <element id="library" level="project" name="Maven: org.apache.mina:mina-core:2.0.7" />
+          <element id="library" level="project" name="Maven: io.netty:netty-all:4.1.16.Final" />
         </element>
       </element>
       <element id="directory" name="META-INF">

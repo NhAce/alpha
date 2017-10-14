@@ -24,7 +24,7 @@ public abstract class EndPoint {
         ConnectionFactory factory = new ConnectionFactory();
 
         //hostname of your rabbitmq server
-        factory.setHost("114.55.10.15");
+        factory.setHost("127.0.0.1");
         factory.setUsername("admin");
         factory.setPassword("123456");
 
