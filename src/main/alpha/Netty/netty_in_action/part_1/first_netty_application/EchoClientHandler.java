@@ -1,4 +1,4 @@
-package Netty.netty_in_action.part_2;
+package Netty.netty_in_action.part_1.first_netty_application;
 
 import io.netty.buffer.ByteBuf;
 import io.netty.buffer.CompositeByteBuf;

@@ -1,4 +1,4 @@
-package Netty.netty_in_action.part_2;
+package Netty.netty_in_action.part_1.first_netty_application;
 
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.channel.ChannelFuture;
@@ -25,7 +25,7 @@ public class EchoServer {
 //            System.err.println("Usage: " + EchoServer.class.getSimpleName() + " <port>");
 //        }
 //        int port = Integer.parseInt(args[0]);
-        new EchoServer(8088).start();
+        new EchoServer(10013).start();
     }
 
     public void start() throws Exception{
