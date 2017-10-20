@@ -20,6 +20,7 @@ public class DiscardServer {
     }
 
     public void run() throws Exception{
+        final DiscardServerHandler serverHandler = new DiscardServerHandler();
         EventLoopGroup bossGroup = new NioEventLoopGroup();
         EventLoopGroup workerGroup = new NioEventLoopGroup();
         try {
@@ -29,7 +30,7 @@ public class DiscardServer {
              .childHandler(new ChannelInitializer<SocketChannel>() {
                  @Override
                  protected void initChannel(SocketChannel socketChannel) throws Exception {
-                     socketChannel.pipeline().addLast(new DiscardServerHandler());
+                     socketChannel.pipeline().addLast(serverHandler);
                  }
              })
              .option(ChannelOption.SO_BACKLOG, 128)
