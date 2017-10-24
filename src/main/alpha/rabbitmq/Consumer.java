@@ -46,13 +46,13 @@ public class Consumer extends EndPoint implements Runnable, com.rabbitmq.client.
     @Override
     public void handleDelivery(String s, Envelope envelope, AMQP.BasicProperties basicProperties, byte[] bytes) throws IOException {
         Map map = (HashMap)SerializationUtils.deserialize(bytes);
-        System.out.println("Message Number " + map.get("message number") + " received.");
+//        System.out.println("Message Number " + map.get("message number") + " received.");
     }
 
     @Override
     public void run() {
         try {
-            channel.basicConsume(endPointName, true, this);
+            channel.basicConsume(endPointName, false, this);
         }catch (IOException e){
             e.printStackTrace();
         }

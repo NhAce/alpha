@@ -24,7 +24,7 @@ public abstract class EndPoint {
         ConnectionFactory factory = new ConnectionFactory();
 
         //hostname of your rabbitmq server
-        factory.setHost("114.55.10.15");
+        factory.setHost("localhost");
         factory.setUsername("admin");
         factory.setPassword("123456");
 
@@ -36,7 +36,7 @@ public abstract class EndPoint {
 
         //declaring a queue for this channel. If queue does not exist,
         //it will be created on the server.
-        channel.queueDeclare(endPointName,false,false,false,null);
+        channel.queueDeclare(endPointName,true,false,false,null);
     }
 
     public void close() throws IOException,TimeoutException{
