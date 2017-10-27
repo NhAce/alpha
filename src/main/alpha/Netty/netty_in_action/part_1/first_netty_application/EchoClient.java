@@ -4,8 +4,10 @@ import io.netty.bootstrap.Bootstrap;
 import io.netty.channel.ChannelFuture;
 import io.netty.channel.ChannelInitializer;
 import io.netty.channel.EventLoopGroup;
+import io.netty.channel.ReflectiveChannelFactory;
 import io.netty.channel.nio.NioEventLoopGroup;
 import io.netty.channel.socket.SocketChannel;
+import io.netty.channel.socket.nio.NioServerSocketChannel;
 import io.netty.channel.socket.nio.NioSocketChannel;
 
 import java.net.InetSocketAddress;
@@ -24,6 +26,7 @@ public class EchoClient {
 
     public void start() throws Exception{
         EventLoopGroup group = new NioEventLoopGroup();
+
         try {
             Bootstrap b = new Bootstrap();
             b.group(group)
@@ -51,6 +54,6 @@ public class EchoClient {
 //        }
 //        String host = args[0];
 //        int port = Integer.parseInt(args[1]);
-        new EchoClient(8088,"127.0.0.1").start();
+        new EchoClient(10013,"127.0.0.1").start();
     }
 }

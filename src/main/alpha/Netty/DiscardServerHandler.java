@@ -1,14 +1,18 @@
 package Netty;
 
 import io.netty.buffer.ByteBuf;
+import io.netty.buffer.ByteBufUtil;
+import io.netty.buffer.PooledByteBufAllocator;
 import io.netty.channel.ChannelHandler;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.ChannelInboundHandlerAdapter;
 import io.netty.util.CharsetUtil;
 import io.netty.util.ReferenceCountUtil;
 import rabbitmq.Producer;
+import threadPool.ThreadPool;
 
 import java.io.IOException;
+import java.util.concurrent.Executor;
 
 
 /**
@@ -17,13 +21,21 @@ import java.io.IOException;
 @ChannelHandler.Sharable
 public class DiscardServerHandler extends ChannelInboundHandlerAdapter{
     private Producer producer;
+    private int channelNum;
 
     @Override
     public void channelRead(ChannelHandlerContext ctx, Object msg) throws Exception {
         // Discard the received data silently.
         //((byte_level_operation)msg).release();
         ByteBuf in = (ByteBuf)msg;
-        System.out.println(in.toString(CharsetUtil.UTF_8));
+        String str = ByteBufUtil.hexDump(in);
+        if (str.length() == 98) {
+            System.out.println(str);
+//            System.out.println(str.substring(26, 94));
+//            str = str.substring(26,94);
+//            System.out.println(str.substring(26, 94).length());
+
+        }
         try {
             //do something
 //            while (in.isReadable()){
@@ -31,7 +43,7 @@ public class DiscardServerHandler extends ChannelInboundHandlerAdapter{
 //                System.out.flush();
 //            }
 //            ctx.writeAndFlush(msg);
-            producer.sendMessage(in.toString(CharsetUtil.UTF_8));
+//            producer.sendMessage(str);
         }finally {
             //ReferenceCountUtil.release(msg);
         }
@@ -62,12 +74,14 @@ public class DiscardServerHandler extends ChannelInboundHandlerAdapter{
     @Override
     public void channelUnregistered(ChannelHandlerContext ctx) throws Exception {
         super.channelUnregistered(ctx);
+        channelNum--;
         System.out.println("channel unregistered!");
     }
 
     @Override
     public void channelActive(ChannelHandlerContext ctx) throws Exception {
         super.channelActive(ctx);
+        channelNum++;
         System.out.println("channel active!");
     }
 
@@ -80,7 +94,7 @@ public class DiscardServerHandler extends ChannelInboundHandlerAdapter{
     @Override
     public void channelReadComplete(ChannelHandlerContext ctx) throws Exception {
         super.channelReadComplete(ctx);
-        System.out.println("channel readComplete!");
+        System.out.println("channel readComplete! channelNum is " + channelNum);
     }
 
     @Override

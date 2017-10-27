@@ -1,5 +1,8 @@
 package rabbitmq;
 
+import io.netty.util.NettyRuntime;
+import io.netty.util.internal.SystemPropertyUtil;
+
 import java.util.HashMap;
 
 /**
@@ -34,5 +37,6 @@ public class Main {
 //        QueueConsumer queueConsumer3 = new QueueConsumer("queue", "consumer3");
 //        Thread queueConsumerThread3 = new Thread(queueConsumer3);
 //        queueConsumerThread3.start();
+//        System.out.println(Math.max(1, SystemPropertyUtil.getInt("io.netty.eventLoopThreads", NettyRuntime.availableProcessors() * 2)));
     }
 }
