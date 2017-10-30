@@ -30,8 +30,8 @@ public class DiscardServerHandler extends ChannelInboundHandlerAdapter{
         ByteBuf in = (ByteBuf)msg;
         String str = ByteBufUtil.hexDump(in);
         if (str.length() == 98) {
-            System.out.println(str);
-//            System.out.println(str.substring(26, 94));
+//            System.out.println(str);
+            System.out.println(str.substring(26, 94));
 //            str = str.substring(26,94);
 //            System.out.println(str.substring(26, 94).length());
 
@@ -43,7 +43,7 @@ public class DiscardServerHandler extends ChannelInboundHandlerAdapter{
 //                System.out.flush();
 //            }
 //            ctx.writeAndFlush(msg);
-//            producer.sendMessage(str);
+            producer.sendMessage(str);
         }finally {
             //ReferenceCountUtil.release(msg);
         }

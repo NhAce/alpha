@@ -5,15 +5,21 @@ import com.rabbitmq.client.Connection;
 import com.rabbitmq.client.ConnectionFactory;
 
 import java.io.IOException;
+import java.util.List;
+import java.util.Map;
 import java.util.concurrent.TimeoutException;
 
 /**
  * Created by Administrator on 2017/9/18 0018.
  */
 public abstract class EndPoint {
-    protected Channel channel;
+    protected List<Map<String, Channel>> channels;
 
-    protected Connection connection;
+    protected List<Connection> connections;
+
+    protected  Connection connection;
+
+    protected Channel channel;
 
     protected String endPointName;
 

@@ -3,6 +3,9 @@ import java.io.FileOutputStream;
 import java.io.OutputStream;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.concurrent.CountDownLatch;
+import java.util.concurrent.CyclicBarrier;
+import java.util.concurrent.ThreadPoolExecutor;
 
 /**
  * Created by Administrator on 2017/9/7 0007.
@@ -49,19 +52,21 @@ public class Test1 {
 //                }
 //        }
 
-        for (int m = 0; m < tabs.length; m++){
-            for (int n = 1; n < 32; n++){
-                for (int i = 1; i < 11; i++){
-                    String sql = "drop table if exists t_gps_" + tabs[m] + n + "_" + i + ";\r\n";
-                    File file = new File("d://1.txt");
-                    OutputStream out = new FileOutputStream(file, true);
-                    byte[] b = sql.getBytes();
-                    out.write(b);
-                    out.close();
-                }
-            }
-        }
-
+//        for (int m = 0; m < tabs.length; m++){
+//            for (int n = 1; n < 32; n++){
+//                for (int i = 1; i < 11; i++){
+//                    String sql = "drop table if exists t_gps_" + tabs[m] + n + "_" + i + ";\r\n";
+//                    File file = new File("d://1.txt");
+//                    OutputStream out = new FileOutputStream(file, true);
+//                    byte[] b = sql.getBytes();
+//                    out.write(b);
+//                    out.close();
+//                }
+//            }
+//        }
+        System.out.println(3 << 29);
+        CountDownLatch countDownLatch;
+        CyclicBarrier cyclicBarrier;
     }
 
     /**
