@@ -1,3 +1,5 @@
+package concurrentUtil;
+
 import java.util.Map;
 import java.util.concurrent.*;
 
@@ -18,7 +20,7 @@ public class BankWaterService implements Runnable {
     /**
      * 假设有 4 个 sheet，所以启动 4 个线程
      */
-    private Executor executor = Executors.newFixedThreadPool(4);
+    private Executor executor = Executors.newFixedThreadPool(6);
 
     /**
      * 保存每个 sheet 计算出的银流结果
@@ -27,7 +29,7 @@ public class BankWaterService implements Runnable {
 
     private void count(){
 
-        for (int i = 0; i < 4; i++){
+        for (int i = 0; i < 3; i++){
             executor.execute(new Runnable() {
                 @Override
                 public void run() {
@@ -36,7 +38,9 @@ public class BankWaterService implements Runnable {
                     sheetBankWaterCount.put(Thread.currentThread().getName(), 1);
                     //银流计算完成，插入一个屏障
                     try {
+                        System.out.println("before -- " + Thread.currentThread().getName());
                         c.await();
+                        System.out.println("after -- " + Thread.currentThread().getName());
                     }catch (InterruptedException | BrokenBarrierException e){
                         e.printStackTrace();
                     }
