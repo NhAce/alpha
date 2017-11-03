@@ -23,8 +23,12 @@ public class SemaphoreTest {
                 @Override
                 public void run() {
                     try {
+                        System.out.println("可用：" + semaphore.availablePermits());
+                        System.out.println("等待： " + semaphore.getQueueLength());
                         semaphore.acquire();
+
                         System.out.println("save data;");
+                        Thread.sleep(5000);
                         semaphore.release();
                     }catch (InterruptedException e){
                     }
