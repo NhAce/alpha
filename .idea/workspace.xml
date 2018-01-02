@@ -48,8 +48,8 @@
       <file leaf-file-name="config-client-dev.properties" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/respo/config-client-dev.properties">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="27">
-              <caret line="1" column="19" lean-forward="false" selection-start-line="1" selection-start-column="19" selection-end-line="1" selection-end-column="19" />
+            <state relative-caret-position="297">
+              <caret line="11" column="0" lean-forward="true" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -975,12 +975,12 @@
       <workItem from="1512113471630" duration="584000" />
       <workItem from="1512960908812" duration="6926000" />
       <workItem from="1513674033329" duration="648000" />
-      <workItem from="1514865116345" duration="734000" />
+      <workItem from="1514865116345" duration="945000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="394833000" />
+    <option name="totallyTimeSpent" value="395044000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1462,8 +1462,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/respo/config-client-dev.properties">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="27">
-          <caret line="1" column="19" lean-forward="false" selection-start-line="1" selection-start-column="19" selection-end-line="1" selection-end-column="19" />
+        <state relative-caret-position="297">
+          <caret line="11" column="0" lean-forward="true" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
           <folding />
         </state>
       </provider>
