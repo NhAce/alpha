@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/alpha.iml" filepath="$PROJECT_DIR$/alpha.iml" />
+      <module fileurl="file://$PROJECT_DIR$/eureka/serviceOne.iml" filepath="$PROJECT_DIR$/eureka/serviceOne.iml" />
     </modules>
   </component>
 </project>

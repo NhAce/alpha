@@ -43,7 +43,8 @@ public class Test {
 //        String a = max.substring(max.length() - 6, max.length());
 //        int a1 = Integer.valueOf(a);
 //        System.out.println("tableName: t_gps_" + getMonth(Test1.getMonth(new Date())) + Test1.getDay(new Date()) + "_" + getTableNo(a1));
-        System.out.println(new Date(1072887887000l));
+        String aa = "http://localhost:10008/bsp/api/locationList?deviceCode=111&beginTime=2017-01-01 16:10:29&endTime=2017-01-01 16:11:29&token=123456&pageNumber=1&pageSize=10";
+        System.out.println(aa.substring(79));
     }
 
     public static String getMonth(int month){

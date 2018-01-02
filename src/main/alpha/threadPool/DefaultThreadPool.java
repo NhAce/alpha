@@ -28,6 +28,7 @@ public class DefaultThreadPool<Job extends Runnable> implements ThreadPool<Job> 
         initializeWorkers(DEFAULT_WORKER_NUMBER);
     }
 
+
     public DefaultThreadPool(int num){
         workerNum = num > MAX_WORKER_NUMBER ? MAX_WORKER_NUMBER : num < MIN_WORKER_NUMBER ? MIN_WORKER_NUMBER : num;
         initializeWorkers(workerNum);

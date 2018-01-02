@@ -1,6 +1,7 @@
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.OutputStream;
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.concurrent.CountDownLatch;
@@ -52,21 +53,21 @@ public class Test1 {
 //                }
 //        }
 
-//        for (int m = 0; m < tabs.length; m++){
-//            for (int n = 1; n < 32; n++){
+        for (int m = 0; m < tabs.length; m++){
+            for (int n = 1; n < 151; n++){
 //                for (int i = 1; i < 11; i++){
-//                    String sql = "drop table if exists t_gps_" + tabs[m] + n + "_" + i + ";\r\n";
-//                    File file = new File("d://1.txt");
-//                    OutputStream out = new FileOutputStream(file, true);
-//                    byte[] b = sql.getBytes();
-//                    out.write(b);
-//                    out.close();
+                    String sql = "drop table if exists t_gps_alarm_" + tabs[m]  + "_" + n + ";\r\n";
+                    File file = new File("d://1.txt");
+                    OutputStream out = new FileOutputStream(file, true);
+                    byte[] b = sql.getBytes();
+                    out.write(b);
+                    out.close();
 //                }
-//            }
-//        }
-        System.out.println(3 << 29);
-        CountDownLatch countDownLatch;
-        CyclicBarrier cyclicBarrier;
+            }
+        }
+//        System.out.println(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(1511104289000l));
+//        CountDownLatch countDownLatch;
+//        CyclicBarrier cyclicBarrier;
     }
 
     /**
